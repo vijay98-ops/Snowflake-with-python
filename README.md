@@ -2,7 +2,9 @@
 This repository contains code snippets for connecting to snowflake database.
 
 # account identifier for bijay123 user (uzvqfza-js07323)
-https://uzvqfza-js07323.snowflakecomputing.com
+https://fa72663.central-india.azure.snowflakecomputing.com
 
 # account identifier
+UZVQFZA.JS07323
+
 UZVQFZA.JS07323

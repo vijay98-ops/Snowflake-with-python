@@ -9,3 +9,9 @@ $ openssl genrsa 2048 | openssl pkcs8 -topk8 -v2 des3 -inform PEM -out rsa_key.p
 
 From the terminal, generate the public key by referencing the private key. The following cmd assumes the private key is encrypted and contained in the file named `rsa_key.p8`
 $ openssl rsa -in rsa_key.p8 -pubout -out rsa_key.pub
+
+#PRoblem
+$ pip install --upgrade pyopenssl==22.0.0 to solve snowflake import error
+
+# USE SYSADMIN ROLE TO NEW USER BIJAY_FIRST FOR CREATING DATABASES AND WAREHOUSES. 
+# WARNING: DONOT GIVE USERADMIN ROLE TO NEW USER BIJAY_FIRST.

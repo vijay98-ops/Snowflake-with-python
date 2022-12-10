@@ -18,17 +18,21 @@ pkb = p_key.private_bytes(
     encryption_algorithm=serialization.NoEncryption())
 
 conn = snow.connect(
-    user='bijay_first',
-    account='uzvqfza-js07323',
+    user='BIJAY_FIRST',
+    account='UZVQFZA-JS07323',
     private_key=pkb,
-    warehouse='DEMO',
-    database='HOME_DB',
-    schema='STUDENTS'
+    #warehouse='DEMO',
+    database='HOMES_DB',
+    schema='COURSES',
+    client_session_keep_alive=True
     )
 
 #cs.execute("USE DATABASE home_db;")
 #cs.execute("CREATE TABLE courses(course_id INT PRIMARY KEY, course_name VARCHAR(20) NOT NULL, course_fee INT NOT NULL);")
-
-conn.cursor().execute("CREATE DATABASE IF NOT EXISTS testdb_mg")
-conn.cursor().execute("USE DATABASE testdb_mg")
-conn.cursor().execute("CREATE SCHEMA IF NOT EXISTS testschema_mg")
+try:
+    #conn.cursor().execute("CREATE DATABASE testdb_mg")
+    conn.cursor().execute("USE DATABASE homes_db")
+    conn.cursor().execute("USE SCHEMA courses")
+    conn.cursor().execute("CREATE TABLE dummy(dum_id INT PRIMARY KEY, dum_name VARCHAR(20) NOT NULL)")
+finally:
+    conn.close()
