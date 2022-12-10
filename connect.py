@@ -17,16 +17,18 @@ pkb = p_key.private_bytes(
     format=serialization.PrivateFormat.PKCS8,
     encryption_algorithm=serialization.NoEncryption())
 
-ctx = snow.connect(
+conn = snow.connect(
     user='bijay_first',
     account='uzvqfza-js07323',
     private_key=pkb,
-    #warehouse=WAREHOUSE,
+    warehouse='DEMO',
     database='HOME_DB',
-    #schema='students'
+    schema='STUDENTS'
     )
 
-cs = ctx.cursor()
-cs.status()
-#cs.execute("USE DATABASE HOME_DB;")
+#cs.execute("USE DATABASE home_db;")
 #cs.execute("CREATE TABLE courses(course_id INT PRIMARY KEY, course_name VARCHAR(20) NOT NULL, course_fee INT NOT NULL);")
+
+conn.cursor().execute("CREATE DATABASE IF NOT EXISTS testdb_mg")
+conn.cursor().execute("USE DATABASE testdb_mg")
+conn.cursor().execute("CREATE SCHEMA IF NOT EXISTS testschema_mg")
