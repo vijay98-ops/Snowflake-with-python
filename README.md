@@ -9,3 +9,8 @@ UZVQFZA.JS07323
 
 UZVQFZA.JS07323
 # just for checking out ssh
+SSH check was successful. We used SSH to authenticate to remote github 
+and local .git/config file to edit commit and push user name and email.
+
+Always use SSH while cloning remote repo which makes it easy while pushing
+to the remote
